@@ -5,11 +5,16 @@
   "repository": "https://github.com/ajaymathur/local-search-poc.git",
   "author": "ajay narain mathur <ajaynarainmathur@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev:watch": "webpack-dev-server"
+  },
   "dependencies": {
-    "react-dom": "^15.5.4",
     "lodash": "^4.17.4",
     "react": "^15.5.4",
-    "react-fontawesome": "^1.6.1"
+    "react-dom": "^15.5.4",
+    "react-fontawesome": "^1.6.1",
+    "react-router": "4.0.0-beta.6",
+"react-router-dom": "4.0.0-beta.6"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
