@@ -5,9 +5,7 @@ import './menu.scss';
 class Menu extends Component{
     render() {
         return (
-            <div className={this.props.menuOpen ? "displayed" : "hidden"}>
-                <div className="back-drop" onClick={this.props.closeMenu()}>
-                </div>
+            <div className="displayed">
                 <nav className="menu-navigation">
                     <ul className="menu-header">
                         <li><Link to='/'>create client</Link></li>

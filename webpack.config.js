@@ -44,7 +44,7 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: __dirname,
-    publicPath: '/assets/'
+    publicPath: '/assets/',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
