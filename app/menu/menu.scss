@@ -1,6 +1,6 @@
 .back-drop{
     position: fixed;
-    top: 0;
+    top: 80px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -8,25 +8,27 @@
     transform: translate3d(100%, 0, 0);
     transition: opacity 0.1s linear;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .menu-navigation{
     position: fixed;
     width: 250px;
     height: 100%;
-    top:0;
+    top: 80px;
     left: 0;
     color: #fff;
     padding: 10px;
     transition: all 0.3s linear;
     transform: translate3d(-100%, 0, 0);
-    background: rgb(0, 128, 239);
+    background: #ffffff;
     cursor: default;
+    z-index: 2;
     .menu-header{
         list-style: none;
         padding: 0;
         li{
-            border-bottom: 1px solid blue;
+            border-bottom: 1px solid #bfbfbf;
             padding: 10px;
             font-size: 1.2em;
         }

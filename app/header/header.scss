@@ -1,0 +1,22 @@
+header{
+  border-bottom: 1px solid #ededed;
+  height: 80px;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 3;
+  background: #fff;
+  width: 100%;
+  top: 0;
+  .menu-icon-contaner{
+    padding: 10px 15px;
+    display: inline-block;
+    border-right: 1px solid #ededed;
+    .menu-icon{
+      font-size: 2em;
+    }
+  }
+  .heading-contaner{
+    display: inline-block;
+    margin-left: 10px;
+  }
+}

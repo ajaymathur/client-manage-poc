@@ -1,15 +1,9 @@
 form{
-    margin-left: 300px;
     label{
         margin: 20px 0;
         display: block;
-        padding: 0 10px;
-        input[type=text]{
-            border: 1px solid #ededed;
-            height: 1.2em;
-            font-size: 0.9em;
-            padding: 5px 2px;
-        }
+        color: #595b5d;
+
         .form-control{
             margin-left: 20px;
             &.credit-card-cvv{
@@ -24,13 +18,19 @@ form{
             height: 50px;
             width: 100px;
         }
+        .validation-error-message{
+            color: #ff6868;
+            font-size: 0.8em;
+            padding: 5px 0;
+        }
     }
     .submit-button{
         display: inline-block;
         height: 50px;
         width: 150px;
-        background: rgba(0, 152, 12, 0.82);
+        background: rgba(98, 222, 108, 0.82);
         border: none;
         font-size: 1.2em;
+        color: #595b5d;
     }
 }

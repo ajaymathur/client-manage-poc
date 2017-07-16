@@ -1,0 +1,117 @@
+.search-client{
+    padding: 0 20px;
+    .table-filter{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .search-field{
+            box-sizing: border-box;
+            width: 45%;
+            text-align: center;
+            margin: 10px 0;
+            opacity: 1;
+            transition: opacity .1s linear;
+        }
+    }
+    .search-button-group{
+        button{
+            padding: 10px;
+            border-radius: 5px;
+            + button{
+                margin-left: 20px;
+            }
+            &.search-button{
+                background-color: rgb(0, 128, 239);
+                color: white;
+                border: 1px solid blue;
+            }
+            &.clear-button{
+                background-color: #fff;
+                border: 1px solid darkgrey
+            }
+        }
+    }
+    .client-list-table{
+        width: 100%;
+        .table-head{
+            text-align: left;
+            tr{
+                th{
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+}
+
+table{
+    thead{
+        tr{
+            height: 40px;
+            th{
+                padding: 0 2px;
+            }
+        }
+    }
+    tbody{
+        tr{
+            &:nth-child(2n){
+                background-color: rgb(247, 247, 247);
+            }
+            &:hover{
+                background-color: #e6e6e6;
+            }
+            td{
+                border-bottom: 1px solid #ededed;
+                padding: 10px 2px;
+            }
+        }
+    }
+}
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px){
+    .search-client{
+        padding:0;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        overflow-wrap: break-word;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /*
+    Label the data
+    */
+    td:nth-of-type(1):before { content: "First Name"; }
+    td:nth-of-type(2):before { content: "Last Name"; }
+    td:nth-of-type(3):before { content: "Email"; }
+    td:nth-of-type(4):before { content: "Phone"; }
+}
