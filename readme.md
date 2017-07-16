@@ -2,7 +2,7 @@ To start:
 
 clone to project in local:
 
-`git clone https://github.com/ajaymathur/local-search-poc.git`
+`git clone https://github.com/ajaymathur/client-manage-poc.git`
 
 then install all the dependencies:
 
