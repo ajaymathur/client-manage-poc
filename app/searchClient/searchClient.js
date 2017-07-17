@@ -13,6 +13,7 @@ class SearchClient extends Component {
             filerVisible: false,
         };
         this.handleInputChange = this.handleInputChange.bind(this);
+        console.log(classNames('test','test1'))
     }
 
     search() {
