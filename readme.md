@@ -12,11 +12,20 @@ to start dev server:
 
 `yarn run start` or `npm run start`
 
-dependencies:
+to run the test suite:
+
+`yarn run test` or `npm run test`
+
+built using:
 
     react
     scss
     font-awesome
+    karma
+    mocha
+    sinon
+    chai
+    enzyme
 
 application structure:
 
