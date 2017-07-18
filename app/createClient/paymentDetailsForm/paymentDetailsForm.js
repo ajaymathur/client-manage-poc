@@ -3,9 +3,6 @@ import {ValidatedInputText} from '../../components';
 import './paymentDetailsForm.scss';
 
 class PaymentDetailsForm extends Component{
-    constructor(props) {
-        super(props);
-    }
 
     buildFormData(param) {
         this.props.buildFormData(param);

@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import {ValidatedInputText, ValidatedRadioGroup, ValidatedTextArea} from '../../components';
 import './userDetailsForm.scss';
 class UserDetailsForm extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     buildFormData(param) {
         this.props.buildFormData(param);

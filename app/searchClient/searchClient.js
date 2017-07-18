@@ -5,15 +5,14 @@ import {ValidatedInputText} from '../components';
 import './searchClient.scss';
 
 class SearchClient extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             allClientDetails: [],
             clientDetails: [],
             filerVisible: false,
         };
         this.handleInputChange = this.handleInputChange.bind(this);
-        console.log(classNames('test','test1'))
     }
 
     search() {

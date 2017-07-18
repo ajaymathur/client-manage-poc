@@ -6,7 +6,6 @@ describe('Header', () => {
     "use strict";
     let wrapper;
     let instance;
-    let headerInstance;
     let sandbox;
     beforeEach(() => {
         wrapper = shallow(<Header/>);

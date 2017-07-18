@@ -4,8 +4,8 @@ import {UserDetailsForm} from './userDetailsForm';
 import {PaymentDetailsForm} from './paymentDetailsForm';
 import './createClient.scss';
 class CreateClient extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             error: {
                 firstName: true,
@@ -17,17 +17,6 @@ class CreateClient extends Component {
             },
             submitError : false,
         };
-        this.handleInputChange = this.handleInputChange.bind(this);
-    }
-
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState({
-            [name]: value
-        });
     }
 
     handleSubmit(event) {

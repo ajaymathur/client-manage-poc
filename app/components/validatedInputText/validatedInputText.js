@@ -74,11 +74,11 @@ class ValidatedInputText extends Component {
             <div className={className}>
                 <input type="text"
                        className="input-text"
-                        placeholder={placeholder}
-                        value={value}
-                        name={name}
-                        onChange={(event) => this.setState({ value: event.target.value })}
-                        onBlur={() => this.validate(validations)}
+                       placeholder={placeholder}
+                       value={value}
+                       name={name}
+                       onChange={(event) => this.setState({ value: event.target.value })}
+                       onBlur={() => this.validate(validations)}
                 />
                 {this.getErrorMessage()}
             </div>
