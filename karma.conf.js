@@ -12,8 +12,15 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['mocha', 'sinon-chai'],
 
-      plugins: [ 'karma-chrome-launcher', 'karma-mocha',
-          'karma-sinon-chai', 'karma-sourcemap-loader', 'karma-webpack', 'karma-coverage',
+      plugins: [
+          'karma-chrome-launcher',
+          'karma-phantomjs-launcher',
+          'karma-mocha',
+          'karma-sinon-chai',
+          'karma-sourcemap-loader',
+          'karma-webpack',
+          'karma-coverage',
+          'karma-mocha-reporter',
       ],
 
     // list of files / patterns to load in the browser
@@ -30,15 +37,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        "app/**/*.js": ['webpack','coverage'],
-        'tests.webpack.js': ['webpack']
+        'tests.webpack.js': ['webpack', 'sourcemap']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['mocha', 'coverage'],
 
 
     // web server port
@@ -60,7 +66,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
@@ -92,7 +98,13 @@ module.exports = function(config) {
             'react-addons-test-utils': 'react-dom',
         },
     },
-
+      coverageReporter: {
+          dir: 'coverage',
+          reporters: [
+              { type: 'html', subdir: 'report-html' },
+              { type: 'lcov', subdir: 'report-lcov' },
+          ]
+      }
 
   })
 }
