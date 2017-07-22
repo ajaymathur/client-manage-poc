@@ -2,10 +2,43 @@ import React, {Component} from 'react';
 import {ValidatedInputText} from '../../components';
 import './paymentDetailsForm.scss';
 
+import forEach from 'lodash/forEach';
+import floor from 'lodash/floor';
+
 class PaymentDetailsForm extends Component{
 
     buildFormData(param) {
         this.props.buildFormData(param);
+    }
+
+    /**
+     * verifing credit card number by Luhn validation algorithm
+     * @type {number}
+     */
+    validateCreditCard(creditCardNumber) {
+        let sum = 0;
+        forEach(
+            creditCardNumber.split('').reverse(),
+            (number, index) => {
+                if (index % 2 !== 0) {
+                    const twiceTheNumber = number*2;
+                    sum += twiceTheNumber >= 10 ? (twiceTheNumber/10 + twiceTheNumber%10) : twiceTheNumber;
+                } else {
+                    sum += parseInt(number, 10);
+                }
+            }
+        )
+        if( sum % 10 !== 0 ) {
+            return {
+                isValid: false,
+                errorMessage: 'should have a valid credit card number'
+            }
+        } else {
+            return {
+                isValid: true
+            }
+        }
+
     }
 
     render() {
@@ -19,7 +52,8 @@ class PaymentDetailsForm extends Component{
                         className="input-field"
                         label='Credit Card Number'
                         placeholder='Enter Card Number here'
-                        validations={['empty']}
+                        validations={['empty', 'onlyDigits']}
+                        additionalValidations={[this.validateCreditCard]}
                         name='cardNumber'
                         populateState={(param) => this.buildFormData(param)}
                         error={errors['cardNumber']}
